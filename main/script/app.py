@@ -1,5 +1,5 @@
 from data import dictionaries
-from database import mysql
+from database import mysql_dtb
 from main.util import utils
 from main.service import codici_catastali_service
 from main.model.Persona import Persona
@@ -21,29 +21,30 @@ persona_x = Persona(cognome, nome, sesso, data_dn, comune_input, provincia_input
 # sposto i metodi "stupidi" nella classe util, ossia quei metodi che non hanno
 # stato e che performano un'operazione semplice
 
-day, month, year = map(int, data_dn.split(' '))
+day, month, year = map(int, persona_x.data_dn.split(' '))
 year_str = str(year)
 year_codicefiscale = year_str[2] + year_str[3]
 letter_month = dictionaries.dizionario_mesi[str(month)]
 day_cf = 0
 str_day = ''
 
-if sesso.lower() == 'm':
+if persona_x.sesso.lower() == 'm':
     day_cf = day
 if day in range(1, 10):
     str_day = str(day)
     day_cf = str('0' + str_day)
-if sesso.lower() == 'f':
+if persona_x.sesso.lower() == 'f':
     day_cf = day + 40
 
 day_cf_str = str(day_cf)
 
 indice_comune = ''
 indice_provincia = ''
-comune_input_2 = comune_input.upper()[0] + comune_input[1:]
-provincia_input_2 = provincia_input.upper()[0] + provincia_input[1:]
-indici_possibili_comune = utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.comune, comune_input_2)
-indici_possibili_provincia = utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.provincia, provincia_input_2)
+comune_input_2 = persona_x.comune_input.upper()[0] + persona_x.comune_input[1:]
+provincia_input_2 = persona_x.provincia_input.upper()[0] + persona_x.provincia_input[1:]
+indici_possibili_comune = utils.Utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.comune, comune_input_2)
+indici_possibili_provincia = utils.Utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.provincia,
+                                                            provincia_input_2)
 
 condiz = True
 g = 0
@@ -57,8 +58,8 @@ while condiz:
     g += 1
 
 codice_catastale = codici_catastali_service.CodiciCatastali.codici_catastale[indice]
-codice_fiscale = utils.funzione_cognomi(cognome) + utils.funzione_nomi(nome) + year_codicefiscale + letter_month +\
-                 day_cf_str + codice_catastale
+codice_fiscale = utils.Utils.funzione_cognomi(persona_x.cognome) + utils.Utils.funzione_nomi(persona_x.nome) \
+                 + year_codicefiscale + letter_month + day_cf_str + codice_catastale
 
 dispari1 = (codice_fiscale[14] + codice_fiscale[12] + codice_fiscale[10] + codice_fiscale[8] + codice_fiscale[6]
             + codice_fiscale[4] + codice_fiscale[2] + codice_fiscale[0]).upper()
@@ -80,10 +81,18 @@ tot_div = tot % 26
 carattere_controllo = dictionaries.controllo[tot_div]
 
 # questo e' il file che va eseguito, mi aspetto quindi che scriva in output il codice fiscale
-cod = utils.funzione_cognomi(cognome) + utils.funzione_nomi(nome) + year_codicefiscale + \
-      letter_month + day_cf_str + codice_catastale + carattere_controllo
+cod = utils.Utils.funzione_cognomi(persona_x.cognome) + utils.Utils.funzione_nomi(persona_x.nome) + year_codicefiscale \
+      + letter_month + day_cf_str + codice_catastale + carattere_controllo
 
 print(f"il tuo codice fiscale è: {cod.upper()}")
 
 info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), data_dn.upper(), comune_input.upper(), provincia_input.upper(), cod.upper()
-mysql.Mysql.store_data(cod, info_to_dtb)
+mysql_dtb.Mysql.store_data(cod, info_to_dtb)
+
+
+def main():
+    pass
+
+
+if __name__ == '__main':
+    main()
