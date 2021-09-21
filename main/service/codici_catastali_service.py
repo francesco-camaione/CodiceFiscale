@@ -11,3 +11,4 @@ class CodiciCatastali:
             provincia.append(row[3])
             codici_catastale.append(row[4])
 
+
