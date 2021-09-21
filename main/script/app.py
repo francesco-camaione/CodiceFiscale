@@ -63,8 +63,8 @@ codice_fiscale = utils.funzione_cognomi(cognome) + utils.funzione_nomi(nome) + y
 dispari1 = (codice_fiscale[14] + codice_fiscale[12] + codice_fiscale[10] + codice_fiscale[8] + codice_fiscale[6]
             + codice_fiscale[4] + codice_fiscale[2] + codice_fiscale[0]).upper()
 
-pari2 = codice_fiscale[13] + codice_fiscale[11] + codice_fiscale[9].upper() +\
-        codice_fiscale[7] + codice_fiscale[5] + codice_fiscale[3].upper() + codice_fiscale[1].upper()
+pari2 = (codice_fiscale[13] + codice_fiscale[11] + codice_fiscale[9]
+         + codice_fiscale[7] + codice_fiscale[5] + codice_fiscale[3] + codice_fiscale[1]).upper()
 
 valori_disp = (dictionaries.dispari[dispari1[0]] + dictionaries.dispari[dispari1[1]] + dictionaries.dispari[dispari1[2]]
                + dictionaries.dispari[dispari1[3]] + dictionaries.dispari[dispari1[4]]
