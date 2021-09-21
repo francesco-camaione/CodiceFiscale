@@ -87,3 +87,5 @@ print(f"il tuo codice fiscale è: {cod.upper()}")
 
 info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), data_dn.upper(), comune_input.upper(), provincia_input.upper(), cod.upper()
 mysql.Mysql.store_data(cod, info_to_dtb)
+
+
