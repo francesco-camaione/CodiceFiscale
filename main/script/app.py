@@ -60,9 +60,8 @@ while condiz:
 codice_catastale = codici_catastali_service.CodiciCatastali.codici_catastale[indice]
 codice_fiscale = utils.funzione_cognomi(cognome) + utils.funzione_nomi(nome) + year_codicefiscale + letter_month +\
                  day_cf_str + codice_catastale
-dispari1 = codice_fiscale[14].upper() + codice_fiscale[12].upper() + codice_fiscale[10].upper() + \
-           codice_fiscale[8].upper() + codice_fiscale[6].upper() + codice_fiscale[4].upper() + \
-           codice_fiscale[2].upper() + codice_fiscale[0].upper()
+dispari1 = (codice_fiscale[14] + codice_fiscale[12] + codice_fiscale[10] + codice_fiscale[8] + codice_fiscale[6] +
+            codice_fiscale[4] + codice_fiscale[2] + codice_fiscale[0]).upper()
 pari2 = codice_fiscale[13].upper() + codice_fiscale[11].upper() + codice_fiscale[9].upper() +\
         codice_fiscale[7].upper() + codice_fiscale[5].upper() + codice_fiscale[3].upper() + codice_fiscale[1].upper()
 valori_disp = (dictionaries.dispari[dispari1[0]] + dictionaries.dispari[dispari1[1]] + dictionaries.dispari[dispari1[2]]
