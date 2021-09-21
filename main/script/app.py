@@ -39,8 +39,6 @@ if sesso.lower() == 'f':
 
 day_cf_str = str(day_cf)
 
-# questa parte e' da inserire in un service apposito.
-
 indice_comune = ''
 indice_provincia = ''
 comune_input_2 = comune_input.upper()[0] + comune_input[1:]
