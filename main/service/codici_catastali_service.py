@@ -1,5 +1,4 @@
 import csv
-# questa parte e' da inserire in un service apposito.
 
 
 class CodiciCatastali:
