@@ -1,4 +1,3 @@
-import database.mysql
 from data import dictionaries
 from database import mysql
 from main.util import utils
