@@ -3,7 +3,8 @@ from database import mysql_dtb
 from main.util import utils
 from main.service import codici_catastali_service
 from main.model.Persona import Persona
-# questo va in script
+
+# richiesta user input
 cognome = input("Qual è il tuo cognome? ")
 nome = input("Qual'è il tuo nome? ")
 sesso = input('Sesso?(M - F): ')
@@ -13,18 +14,12 @@ provincia_input = input('Inserisci la provincia di nascita: ')
 
 persona_x = Persona(cognome, nome, sesso, data_dn, comune_input, provincia_input)
 
-# studio le classi e gli oggetti e che vuol dire instanziare una classe
-
-# istanzio la classe Persona
-# chiamo il servizio che calcola il codice fiscale
-
-# sposto i metodi "stupidi" nella classe util, ossia quei metodi che non hanno
-# stato e che performano un'operazione semplice
+# calcolo ultime due cifre dell'anno, lettera mese, cifra giorno di nascita in base al sesso
 
 day, month, year = map(int, persona_x.data_dn.split(' '))
 year_str = str(year)
-year_codicefiscale = year_str[2] + year_str[3]
-letter_month = dictionaries.dizionario_mesi[str(month)]
+year_codicefiscale = year_str[2] + year_str[3]  # anno
+letter_month = dictionaries.dizionario_mesi[str(month)]  # lettera_mese
 day_cf = 0
 str_day = ''
 
@@ -36,8 +31,9 @@ if day in range(1, 10):
 if persona_x.sesso.lower() == 'f':
     day_cf = day + 40
 
-day_cf_str = str(day_cf)
+day_cf_str = str(day_cf)  # giorno
 
+# calcolo codice catastale (4 caratteri)
 indice_comune = ''
 indice_provincia = ''
 comune_input_2 = persona_x.comune_input.upper()[0] + persona_x.comune_input[1:]
@@ -58,6 +54,8 @@ while condiz:
     g += 1
 
 codice_catastale = codici_catastali_service.CodiciCatastali.codici_catastale[indice]
+
+# carattere di controllo (1 lettera)
 codice_fiscale = utils.Utils.funzione_cognomi(persona_x.cognome) + utils.Utils.funzione_nomi(persona_x.nome) \
                  + year_codicefiscale + letter_month + day_cf_str + codice_catastale
 
@@ -80,12 +78,13 @@ tot = (valori_pari + valori_disp)
 tot_div = tot % 26
 carattere_controllo = dictionaries.controllo[tot_div]
 
-# questo e' il file che va eseguito, mi aspetto quindi che scriva in output il codice fiscale
+# output codice fiscale
 cod = utils.Utils.funzione_cognomi(persona_x.cognome) + utils.Utils.funzione_nomi(persona_x.nome) + year_codicefiscale \
       + letter_month + day_cf_str + codice_catastale + carattere_controllo
 codice = cod.upper()
 print(f"il tuo codice fiscale è: {codice}")
 
+# saving user data
 info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.data_dn.upper(),\
               persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice
 mysql_dtb.Mysql.store_data(cod, info_to_dtb)
