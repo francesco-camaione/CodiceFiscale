@@ -18,8 +18,8 @@ persona_x = Persona(cognome, nome, sesso, data_dn, comune_input, provincia_input
 
 day, month, year = map(int, persona_x.data_dn.split(' '))
 year_str = str(year)
-year_codicefiscale = year_str[2] + year_str[3]
-letter_month = dictionaries.dizionario_mesi[str(month)]
+year_codicefiscale = year_str[2] + year_str[3]  # anno
+letter_month = dictionaries.dizionario_mesi[str(month)]  # lettera_mese
 day_cf = 0
 str_day = ''
 
@@ -31,7 +31,7 @@ if day in range(1, 10):
 if persona_x.sesso.lower() == 'f':
     day_cf = day + 40
 
-day_cf_str = str(day_cf)
+day_cf_str = str(day_cf)  # giorno
 
 # calcolo codice catastale (4 caratteri)
 indice_comune = ''
