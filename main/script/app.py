@@ -83,10 +83,11 @@ carattere_controllo = dictionaries.controllo[tot_div]
 # questo e' il file che va eseguito, mi aspetto quindi che scriva in output il codice fiscale
 cod = utils.Utils.funzione_cognomi(persona_x.cognome) + utils.Utils.funzione_nomi(persona_x.nome) + year_codicefiscale \
       + letter_month + day_cf_str + codice_catastale + carattere_controllo
+codice = cod.upper()
+print(f"il tuo codice fiscale è: {codice}")
 
-print(f"il tuo codice fiscale è: {cod.upper()}")
-
-info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), data_dn.upper(), comune_input.upper(), provincia_input.upper(), cod.upper()
+info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.data_dn.upper(),\
+              persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice
 mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
 

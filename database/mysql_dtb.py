@@ -2,6 +2,7 @@ import mysql.connector
 
 
 class Mysql:
+
     def store_data(self, record):
 
         try:
@@ -15,8 +16,10 @@ class Mysql:
             )
 
             cursor = mydtb.cursor()
-            mysql_insert_query = """INSERT INTO dati_cf (Cognome, Nome, Sesso, Data_di_nascita, Comune, Provincia, Codice_Fisc) 
-                            VALUES (%s, %s, %s, %s, %s, %s, %s) """
+            mysql_insert_query = """
+                            INSERT INTO dati_cf (Cognome, Nome, Sesso, Data_di_nascita, Comune, Provincia, Codice_Fisc) 
+                            VALUES (%s, %s, %s, %s, %s, %s, %s);
+                            """
 
             record = record
             cursor.execute(mysql_insert_query, record)
