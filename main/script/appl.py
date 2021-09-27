@@ -97,7 +97,7 @@ mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
 # saving user data
 info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.data_dn.upper(),\
-persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice()
+              persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice()
 mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
 

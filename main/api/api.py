@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from data import dictionaries
+from database import mysql_dtb
 from main.service import codici_catastali_service
 from main.util import utils
 
@@ -61,12 +62,12 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
 
     # carattere di controllo (1 lettera)
     codice_fiscale = utils.Utils.funzione_cognomi(cognome) + utils.Utils.funzione_nomi(nome) + year_codicefiscale \
-                      + letter_month + day_cf_str + codice_catastale
+                     + letter_month + day_cf_str + codice_catastale
 
     dispari1 = (codice_fiscale[14] + codice_fiscale[12] + codice_fiscale[10] + codice_fiscale[8] + codice_fiscale[6] +
                 codice_fiscale[4] + codice_fiscale[2] + codice_fiscale[0]).upper()
 
-    pari2 = (codice_fiscale[13] + codice_fiscale[11] + codice_fiscale[9]+ codice_fiscale[7] + codice_fiscale[5] +
+    pari2 = (codice_fiscale[13] + codice_fiscale[11] + codice_fiscale[9] + codice_fiscale[7] + codice_fiscale[5] +
              codice_fiscale[3] + codice_fiscale[1]).upper()
 
     valori_disp = (dictionaries.dispari[dispari1[0]] + dictionaries.dispari[dispari1[1]] +
@@ -83,8 +84,17 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
     carattere_controllo = dictionaries.controllo[tot_div]
 
     # output codice fiscale
-    cod = utils.Utils.funzione_cognomi(cognome) + utils.Utils.funzione_nomi(nome) + year_codicefiscale +\
-        letter_month + day_cf_str + codice_catastale + carattere_controllo
+    cod = utils.Utils.funzione_cognomi(cognome) + utils.Utils.funzione_nomi(nome) + year_codicefiscale + \
+          letter_month + day_cf_str + codice_catastale + carattere_controllo
     codice = f'Il codice fiscale è:  {cod.upper()}'
+    # saving user data
+    info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), giorno.upper(), mese.upper(), anno.upper(), \
+                  comune.upper(), provincia.upper(), codice
+    mysql_dtb.Mysql.store_data(cod, info_to_dtb)
+
+    # saving user data
+    info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), year.upper(), comune.upper(), provincia.upper(), \
+                  cod.upper()
+    mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
     return templates.TemplateResponse('index.html', context={'request': request, 'codice': codice})
