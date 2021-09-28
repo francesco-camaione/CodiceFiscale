@@ -29,9 +29,3 @@ class Mysql:
         except mysql.connector.Error as error:
             print("Failed to insert into MySQL table {}".format(error))
 
-        finally:
-            if mydtb.is_connected():
-                cursor.close()
-                mydtb.close()
-            else:
-                pass
