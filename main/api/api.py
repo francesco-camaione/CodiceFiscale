@@ -103,4 +103,3 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
-    
