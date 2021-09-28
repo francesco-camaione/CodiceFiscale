@@ -99,7 +99,3 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
     mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
     return templates.TemplateResponse('index.html', context={'request': request, 'codice': codice})
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
