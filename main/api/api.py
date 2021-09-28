@@ -42,7 +42,7 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
     # calcolo codice catastale (4 caratteri)
     indice_comune = ''
     indice_provincia = ''
-    comune_input_2 = comune.upper()[0] + comune[1:]
+    comune_input_2 = comune.upper()[0] + comune.strip()[1:]
     provincia_input_2 = provincia.upper()[0] + provincia.lower()[1:]
     indici_possibili_comune = utils.Utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.comune,
                                                              comune_input_2)

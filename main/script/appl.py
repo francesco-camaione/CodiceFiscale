@@ -40,8 +40,8 @@ day_cf_str = str(day_cf)  # giorno
 # calcolo codice catastale (4 caratteri)
 indice_comune = ''
 indice_provincia = ''
-comune_input_2 = persona_x.comune_input.upper()[0] + persona_x.comune_input[1:]
-provincia_input_2 = persona_x.provincia_input.upper()[0] + persona_x.provincia_input[1:]
+comune_input_2 = persona_x.comune_input.upper()[0] + persona_x.comune_input.strip[1:]
+provincia_input_2 = persona_x.provincia_input.upper()[0] + persona_x.provincia_input.strip[1:]
 indici_possibili_comune = utils.Utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.comune, comune_input_2)
 indici_possibili_provincia = utils.Utils.list_duplicates_of(codici_catastali_service.CodiciCatastali.provincia,
                                                             provincia_input_2)
@@ -107,3 +107,4 @@ def main():
 
 if __name__ == '__main':
     main()
+
