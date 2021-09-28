@@ -1,1 +1,1 @@
-web: gunicorn -w 4 -k uvicorn.workers.UvicornWorker main.api.api:app
+web: uvicorn main.api.api:app --host=0.0.0.0 --port=$PORT

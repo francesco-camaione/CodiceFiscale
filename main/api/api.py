@@ -4,13 +4,9 @@ from data import dictionaries
 from database import mysql_dtb
 from main.service import codici_catastali_service
 from main.util import utils
-import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="src/build/")
-
-port = int(os.environ.get('PORT', 5000))
-app.run(host='0.0.0.0', port=port)
 
 
 @app.get("/")
