@@ -5,18 +5,22 @@ from main.service import codici_catastali_service
 from main.model.Persona import Persona
 
 # richiesta user input
-cognome = input("Qual è il tuo cognome? ")
-nome = input("Qual'è il tuo nome? ")
-sesso = input('Sesso?(M - F): ')
-data_dn = input('Inserisci la tua  data di nascita in DD MM YYYY: ')
-comune_input = input('Inserisci il comune di nascita: ')
-provincia_input = input('Inserisci la provincia di nascita: ')
+cognome = input('')
+nome = input('')
+sesso = input('')
+giorno = input('')
+mese = input('')
+anno = input('')
+comune_input = input('')
+provincia_input = input('')
 
-persona_x = Persona(cognome, nome, sesso, data_dn, comune_input, provincia_input)
+persona_x = Persona(cognome, nome, sesso, giorno, mese, anno, comune_input, provincia_input)
 
 # calcolo ultime due cifre dell'anno, lettera mese, cifra giorno di nascita in base al sesso
 
-day, month, year = map(int, persona_x.data_dn.split(' '))
+day = giorno
+month = mese
+year = anno
 year_str = str(year)
 year_codicefiscale = year_str[2] + year_str[3]  # anno
 letter_month = dictionaries.dizionario_mesi[str(month)]  # lettera_mese
@@ -85,8 +89,15 @@ codice = cod.upper()
 print(f"il tuo codice fiscale è: {codice}")
 
 # saving user data
+info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.giorno.upper(),\
+              persona_x.mese.upper(), persona_x.anno.upper(), persona_x.comune_input.upper(),\
+              persona_x.provincia_input.upper(), codice
+mysql_dtb.Mysql.store_data(cod, info_to_dtb)
+
+
+# saving user data
 info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.data_dn.upper(),\
-              persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice
+              persona_x.comune_input.upper(), persona_x.provincia_input.upper(), codice()
 mysql_dtb.Mysql.store_data(cod, info_to_dtb)
 
 

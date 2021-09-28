@@ -10,7 +10,7 @@ class Mysql:
             mydtb = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='Golftdi11',
+                password='codicefiscale11',
                 port='3306',
                 database='cod_fiscale',
             )
@@ -35,11 +35,3 @@ class Mysql:
                 mydtb.close()
             else:
                 pass
-
-
-def main():
-    pass
-
-
-if __name__ == '__main':
-    main()

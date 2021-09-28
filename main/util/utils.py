@@ -56,11 +56,3 @@ class Utils:
                 locs.append(loc)
                 start_at = loc
         return locs
-
-
-def main():
-    pass
-
-
-if __name__ == '__main':
-    main()
