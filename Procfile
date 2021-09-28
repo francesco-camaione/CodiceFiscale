@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT main.api.api:app
+web: uvicorn app.main:app --host=0.0.0.0 --port=$PORT
