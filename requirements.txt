@@ -1,0 +1,9 @@
+fastapi~=0.68.1
+pip~=21.2.4
+six~=1.16.0
+protobuf~=3.17.3
+mysql-connector-python~=8.0.26
+python-dateutil~=1.5
+setuptools~=56.0.0
+Django~=3.2.5
+sqlparse~=0.4.1
