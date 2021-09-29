@@ -2,16 +2,17 @@ class Utils:
 
     def funzione_cognomi(cognome: str):
         i = 0
+        cognome_ = cognome.strip()
         treconsonanti = ''
-        vocali = 'a' 'e' 'i' 'o' 'u' ' '
+        vocali = 'a' 'e' 'i' 'o' 'u' ' ' 'A' 'E' 'I' 'O' 'U'
         vocali_cognome = ''
         hotrovatotreoccorenze = True
         consonanti_cognome = ''
-        while i < len(cognome) and hotrovatotreoccorenze:
-            if cognome[i] in vocali:
-                vocali_cognome += cognome[i]
-            if cognome[i] not in vocali:
-                consonanti_cognome += cognome[i]
+        while i < len(cognome_) and hotrovatotreoccorenze:
+            if cognome_[i] in vocali:
+                vocali_cognome += cognome_[i]
+            if cognome_[i] not in vocali:
+                consonanti_cognome += cognome_[i]
             if len(consonanti_cognome) == 3:
                 treconsonanti = consonanti_cognome[0] + consonanti_cognome[1] + consonanti_cognome[2]
             if len(consonanti_cognome) == 2:
@@ -28,7 +29,7 @@ class Utils:
         consonanti_nome = ''
         vocali_nome = ''
         condizione = True
-        vocali = 'a' 'e' 'i' 'o' 'u' ' '
+        vocali = 'a' 'e' 'i' 'o' 'u' ' ' 'A' 'E' 'I' 'O' 'U'
         while cf_nome < len(nome) and condizione:
             if nome[cf_nome] not in vocali:
                 consonanti_nome += nome[cf_nome]
