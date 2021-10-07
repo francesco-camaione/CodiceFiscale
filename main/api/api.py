@@ -87,7 +87,7 @@ def input_user(request: Request, nome: str = Form(...), cognome: str = Form(...)
     # output codice fiscale
     cod = utils.Utils.funzione_cognomi(cognome) + utils.Utils.funzione_nomi(nome) + year_codicefiscale + \
           letter_month + day_cf_str + codice_catastale + carattere_controllo
-    codice = f'Il codice fiscale è:  {cod.upper()}'
+    codice = f'{cod.upper()}'
     # saving user data
     info_to_dtb = cognome.upper(), nome.upper(), sesso.upper(), giorno.upper(), mese.upper(), anno.upper(), \
                   comune.upper(), provincia.upper(), codice
