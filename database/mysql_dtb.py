@@ -10,7 +10,7 @@ class Mysql:
             mydtb = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='Golftdi11',
+                password='codicefiscale11',
                 port='3306',
                 database='cod_fiscale',
             )
@@ -29,17 +29,3 @@ class Mysql:
         except mysql.connector.Error as error:
             print("Failed to insert into MySQL table {}".format(error))
 
-        finally:
-            if mydtb.is_connected():
-                cursor.close()
-                mydtb.close()
-            else:
-                pass
-
-
-def main():
-    pass
-
-
-if __name__ == '__main':
-    main()

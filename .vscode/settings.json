@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "./main/service",
+        "./main/util",
+        "./data",
+        "./database"
+    ]
+}
