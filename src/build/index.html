@@ -18,19 +18,19 @@
         <div class="col-8" style="margin: auto; background-color: royalblue ; border-radius: 20px; box-sizing: content-box; max-width: 700px;">
             <form method="post">
                 <div class="row"><div class="col-md-6"><p style="margin-top: 10px; font-weight: 600; text-align: center;">NOME</p></div><div class="col-md-6" style="text-align: center;">
-                    <input type="text" name="nome" id="nome" placeholder="Mario" style="margin-top: 10px; border-radius: 4px; border: transparent; text-align: center;" />
+                    <input type="text" name="nome" id="nome" placeholder="Mario" style="margin-top: 10px; border-radius: 4px; border: transparent; text-align: center; margin-bottom: 10px;" />
                 </div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">COGNOME</p></div><div class="col-md-6" style="text-align: center;">
-                    <input type="text" name="cognome" id="cognome" placeholder="Rossi" style="border-radius: 4px; border: transparent; text-align: center;"/>
+                <div class="row"><div class="col-md-6"><p style="font-weight: 600; text-align: center;">COGNOME</p></div><div class="col-md-6" style="text-align: center;">
+                    <input type="text" name="cognome" id="cognome" placeholder="Rossi" style="border-radius: 4px; border: transparent; text-align: center; margin-bottom: 10px;"/>
                 </div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">SESSO</p></div><div class="col-md-6" style="text-align: center;">
-                    <select name="sesso" id="sesso" style="margin: auto; border-radius: 8px; background-color: white; border-color: white;"><option>M</option><option>F</option></select>
+                <div class="row"><div class="col-md-6"><p style="font-weight: 600; text-align: center;">SESSO</p></div><div class="col-md-6" style="text-align: center; margin-bottom: 10px;">
+                    <select name="sesso" id="sesso" style="margin: auto; border-radius: 4px; background-color: white; border-color: white; min-height: 26px;"><option>M</option><option>F</option></select>
                 </div>
 
-                <div class="row" style="box-sizing: content-box;"><div class="col-md-6" ><p style="margin-top: 5px; font-weight: 600; text-align: center; ">DATA DI NASCITA</p></div><div class="col-md-6" style="text-align: center;">
-                    <select name="giorno" id="giorno" style="border-radius: 8px; background-color: white; border-color: white; ">
+                <div class="row" style="box-sizing: content-box;"><div class="col-md-6" ><p style="font-weight: 600; text-align: center; ">DATA DI NASCITA</p></div><div class="col-md-6" style="text-align: center; margin-bottom: 10px;">
+                    <select name="giorno" id="giorno" style="border-radius: 4px; background-color: white; border-color: white; min-height: 26px; ">
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -63,7 +63,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="mese" id="mese" style="border-radius: 8px; background-color:white; border-color: white;">
+                    <select name="mese" id="mese" style="border-radius: 4px; background-color:white; border-color: white; min-height: 26px;">
                         <option value="1">Gennaio</option>
                         <option value="2">Febbraio</option>
                         <option value="3">Marzo</option>
@@ -77,7 +77,7 @@
                         <option value="11">Novembre</option>
                         <option value="12">Dicembre</option>
                     </select>
-                    <select name="anno" id="anno" style="border-radius: 8px; background-color: white; border-color: white;">
+                    <select name="anno" id="anno" style="border-radius: 4px; background-color: white; border-color: white; min-height: 26px;">
                         <option value="1900">1900</option>
                         <option value="1901">1901</option>
                         <option value="1902">1902</option>
@@ -203,13 +203,13 @@
                     </select>
                 </div></div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">PROVINCIA</p></div><div class="col-md-6" style="text-align: center;">
-                    <select id="provincia" onchange="postprovincia()" name="provincia" style="margin-bottom: 20px; border-radius: 4px; border: transparent; background-color: white;"><option selected>Seleziona</option><option>Agrigento</option><option>Alessandria</option><option>Ancona</option><option>Aosta</option><option>Arezzo</option><option>Ascoli Piceno</option><option>Asti</option><option>Avellino</option><option>Bari</option><option>Barletta-Andria-Trani</option><option>Belluno</option><option>Benevento</option><option>Bergamo</option><option>Biella</option><option>Bologna</option><option>Bolzano</option><option>Brescia</option><option>Brindisi</option><option>Cagliari</option><option>Caltanissetta</option><option>Campobasso</option><option>Caserta</option><option>Catania</option><option>Catanzaro</option><option>Chieti</option><option>Como</option><option>Cosenza</option><option>Cremona</option><option>Crotone</option><option>Cuneo</option><option>Enna</option><option>Fermo</option><option>Ferrara</option><option>Firenze</option><option>Foggia</option><option>Frosinone</option><option>Genova</option><option>Gorizia</option><option>Grosseto</option><option >Imperia</option><option>Isernia</option><option>La Spezia</option><option >L'Aquila</option><option>Latina</option><option>Lecce</option><option>Lecco</option><option>Livorno</option><option>Lodi</option><option>Lucca</option><option>Macerata</option><option>Mantova</option><option>Massa-Carrara</option><option>Matera</option><option>Messina</option><option>Milano</option><option>Modena</option><option>Monza e della Brianza</option><option>Napoli</option><option>Novara</option><option>Nuoro</option><option>Oristano</option><option>Padova</option><option>Palermo</option><option>Parma</option><option>Pavia</option><option>Perugia</option><option>Pesaro e Urbino</option><option>Pescara</option><option>Piacenza</option><option>Pisa</option><option>Pistoia</option><option>Pordenone</option><option>Potenza</option><option>Prato</option><option>Ragusa</option><option>Ravenna</option><option>Reggio Calabria</option><option>Reggio Emilia</option><option>Rieti</option><option>Rimini</option><option>Roma</option><option>Rovigo</option><option>Salerno</option><option>Sassari</option><option>Savona</option><option>Siena</option><option>Siracusa</option><option>Sondrio</option><option>Taranto</option><option>Teramo</option><option>Terni</option><option>Torino</option><option>Trapani</option><option>Trento</option><option>Treviso</option><option>Trieste</option><option>Udine</option><option>Varese</option><option>Venezia</option><option>Verbano-Cusio-Ossola</option><option>Vercelli</option><option>Verona</option><option>Vibo Valentia</option><option>Vicenza</option><option>Viterbo</option></select>
+                <div class="row"><div class="col-md-6"><p style="font-weight: 600; text-align: center;">PROVINCIA</p></div><div class="col-md-6" style="text-align: center;">
+                    <select id="provincia" onchange="postprovincia()" name="provincia" style="margin-bottom: 10px; border-radius: 4px; border: transparent; background-color: white; min-height: 26px; min-width: 186px; max-width: 186px;"><option selected>Seleziona</option><option>Agrigento</option><option>Alessandria</option><option>Ancona</option><option>Aosta</option><option>Arezzo</option><option>Ascoli Piceno</option><option>Asti</option><option>Avellino</option><option>Bari</option><option>Barletta-Andria-Trani</option><option>Belluno</option><option>Benevento</option><option>Bergamo</option><option>Biella</option><option>Bologna</option><option>Bolzano</option><option>Brescia</option><option>Brindisi</option><option>Cagliari</option><option>Caltanissetta</option><option>Campobasso</option><option>Caserta</option><option>Catania</option><option>Catanzaro</option><option>Chieti</option><option>Como</option><option>Cosenza</option><option>Cremona</option><option>Crotone</option><option>Cuneo</option><option>Enna</option><option>Fermo</option><option>Ferrara</option><option>Firenze</option><option>Foggia</option><option>Frosinone</option><option>Genova</option><option>Gorizia</option><option>Grosseto</option><option >Imperia</option><option>Isernia</option><option>La Spezia</option><option >L'Aquila</option><option>Latina</option><option>Lecce</option><option>Lecco</option><option>Livorno</option><option>Lodi</option><option>Lucca</option><option>Macerata</option><option>Mantova</option><option>Massa-Carrara</option><option>Matera</option><option>Messina</option><option>Milano</option><option>Modena</option><option>Monza e della Brianza</option><option>Napoli</option><option>Novara</option><option>Nuoro</option><option>Oristano</option><option>Padova</option><option>Palermo</option><option>Parma</option><option>Pavia</option><option>Perugia</option><option>Pesaro e Urbino</option><option>Pescara</option><option>Piacenza</option><option>Pisa</option><option>Pistoia</option><option>Pordenone</option><option>Potenza</option><option>Prato</option><option>Ragusa</option><option>Ravenna</option><option>Reggio Calabria</option><option>Reggio Emilia</option><option>Rieti</option><option>Rimini</option><option>Roma</option><option>Rovigo</option><option>Salerno</option><option>Sassari</option><option>Savona</option><option>Siena</option><option>Siracusa</option><option>Sondrio</option><option>Taranto</option><option>Teramo</option><option>Terni</option><option>Torino</option><option>Trapani</option><option>Trento</option><option>Treviso</option><option>Trieste</option><option>Udine</option><option>Varese</option><option>Venezia</option><option>Verbano-Cusio-Ossola</option><option>Vercelli</option><option>Verona</option><option>Vibo Valentia</option><option>Vicenza</option><option>Viterbo</option></select>
                 </div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">COMUNE</p></div><div class="col-md-6" style="text-align: center;">
+                <div class="row"><div class="col-md-6"><p style="font-weight: 600; text-align: center;">COMUNE</p></div><div class="col-md-6" style="text-align: center;">
 
-                    <select id="comuni_list" name="comune"  style="border-radius: 4px; border: transparent; min-width: 180px; background-color: white; max-width: 180px;"><option disabled selected>Seleziona</option>{{comuni_list}}</select>
+                    <select id="comuni_list" name="comune"  style="border-radius: 4px; border: transparent; min-width: 186px; background-color: white; max-width: 186px; min-height: 26px;"><option disabled selected>Seleziona</option>{{comuni_list}}</select>
 
                 </div></div>
 
@@ -218,7 +218,7 @@
                         <div class="col-md-6" style="text-align: center;"><p style="color: #4cc1bb; font-weight: 650">{{codice}}</p></div>
                     </div>
                     <div class="col-md-12">
-                        <input type="submit" value="CALCOLA" style="border-radius: 10px; border: transparent; background-color: aliceblue ; margin: auto; text-align: center; display: block; width: 140px; margin-bottom: 5px; color: black; "/> 
+                        <input type="submit" value="CALCOLA" style="border-radius: 10px; border: transparent; background-color: aliceblue ; margin: auto; text-align: center; display: block; width: 140px; margin-bottom: 35px; color: black; "/>
                     </div>
                 </div>
 
