@@ -88,19 +88,6 @@ cod = utils.funzione_cognomi(persona_x.cognome) + utils.funzione_nomi(persona_x.
 codice = cod.upper()
 print(f"il tuo codice fiscale è: {codice}")
 
-z = 0
-condiz = True
-while condiz:
-    try:
-        c = indici_possibili_provincia[z]
-        z += 1
-        comuni_poss = codici_catastali_service.CodiciCatastali.comune[c]
-        comuni_list = ''
-        comuni_list += f"<option>{comuni_poss}</option>"
-        print(comuni_list)
-    except IndexError:
-        condiz = False
-
 # saving user data
 info_to_dtb = persona_x.cognome.upper(), persona_x.nome.upper(), persona_x.sesso.upper(), persona_x.giorno.upper(),\
               persona_x.mese.upper(), persona_x.anno.upper(), persona_x.comune_input.upper(),\
