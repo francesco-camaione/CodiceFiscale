@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
     <title>CodiceFiscale-Calcola il tuo codice fiscale</title>
 </head>
-<body>
-<div class="container_fluid" style="background-color: lightblue; overflow-x: hidden">
+<body style="background-color: lightblue;">
+<div class="container_fluid" style="overflow-x: hidden;">
     <div class="row">
-        <div class="col-lg-12" style="margin: auto; text-align: center; background-color: #2b3ec3; margin-bottom 15px">
+        <div class="col-lg-12" style="margin: auto; text-align: center; background-color: #2b3ec3; margin-bottom: 15px;">
             <h1>CodiceFiscale</h1>
         </div>
     </div>
-    <div class="row" style="margin-top: 20px; margin-bottom: 20px">
-        <div class="col-sm-6" style="margin: auto; background-color: royalblue ; border-radius: 20px;">
+    <div class="row" style="margin-top: 20px; margin-bottom: 35px">
+        <div class="col-8" style="margin: auto; background-color: royalblue ; border-radius: 20px; box-sizing: content-box; max-width: 700px;">
             <form method="post">
-                <div class="row"><div class="col-md-6"><p style="margin-top: 10px; font-weight: 600; ">NOME</p></div><div class="col-md-6">
-                    <input type="text" name="nome" placeholder="Mario" style="margin-top: 10px; border-radius: 4px; border: transparent;" />
+                <div class="row"><div class="col-md-6"><p style="margin-top: 10px; font-weight: 600; text-align: center;">NOME</p></div><div class="col-md-6" style="text-align: center;">
+                    <input type="text" name="nome" id="nome" placeholder="Mario" style="margin-top: 10px; border-radius: 4px; border: transparent; text-align: center;" />
                 </div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600;">COGNOME</p></div><div class="col-md-6">
-                    <input type="text" name="cognome" placeholder="Rossi" style="border-radius: 4px; border: transparent;"/>
+                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">COGNOME</p></div><div class="col-md-6" style="text-align: center;">
+                    <input type="text" name="cognome" id="cognome" placeholder="Rossi" style="border-radius: 4px; border: transparent; text-align: center;"/>
                 </div></div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600;">SESSO</p></div><div class="col-md-6">
-                    <select name="sesso" style="margin: auto; border-radius: 8px; "><option>M</option><option>F</option></select>
+                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">SESSO</p></div><div class="col-md-6" style="text-align: center;">
+                    <select name="sesso" id="sesso" style="margin: auto; border-radius: 8px; background-color: white; border-color: white;"><option>M</option><option>F</option></select>
                 </div>
 
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600;">DATA DI NASCITA</p></div><div class="col-md-6">
-                    <select name="giorno" style="border-radius: 8px; background-color: white; ">
+                <div class="row" style="box-sizing: content-box;"><div class="col-md-6" ><p style="margin-top: 5px; font-weight: 600; text-align: center; ">DATA DI NASCITA</p></div><div class="col-md-6" style="text-align: center;">
+                    <select name="giorno" id="giorno" style="border-radius: 8px; background-color: white; border-color: white; ">
                         <option value="01">01</option>
                         <option value="02">02</option>
                         <option value="03">03</option>
@@ -46,7 +46,7 @@
                         <option value="13">13</option>
                         <option value="14">14</option>
                         <option value="15">15</option>
-                        <option value="16">16</option>
+                        <option value="16" selected>16</option>
                         <option value="17">17</option>
                         <option value="18">18</option>
                         <option value="19">19</option>
@@ -63,21 +63,21 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="mese" style="border-radius: 8px; background-color:white; ">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
+                    <select name="mese" id="mese" style="border-radius: 8px; background-color:white; border-color: white;">
+                        <option value="1">Gennaio</option>
+                        <option value="2">Febbraio</option>
+                        <option value="3">Marzo</option>
+                        <option value="4">Aprile</option>
+                        <option value="5">Maggio</option>
+                        <option value="6" selected>Giugno</option>
+                        <option value="7">Luglio</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Settembre</option>
+                        <option value="10">Ottobre</option>
+                        <option value="11">Novembre</option>
+                        <option value="12">Dicembre</option>
                     </select>
-                    <select name="anno" style="border-radius: 8px; background-color: white; ">
+                    <select name="anno" id="anno" style="border-radius: 8px; background-color: white; border-color: white;">
                         <option value="1900">1900</option>
                         <option value="1901">1901</option>
                         <option value="1902">1902</option>
@@ -201,29 +201,30 @@
                         <option value="2020">2020</option>
                         <option value="2021">2021</option>
                     </select>
-                </div></div>
-
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600;">COMUNE</p></div><div class="col-md-6">
-                    <input name="comune" placeholder="Tortoreto" style="border-radius: 4px; border: transparent;"/>
-                </div></div>
-
-                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600;">PROVINCIA</p></div><div class="col-md-6">
-                    <select name="provincia" class="dropdownlist" style="margin-bottom: 20px; border-radius: 4px; border: transparent; background-color: white;"><option>Agrigento</option><option>Alessandria</option><option>Ancona</option><option>Aosta</option><option>Arezzo</option><option>Ascoli Piceno</option><option>Asti</option><option>Avellino</option><option>Bari</option><option>Barletta-Andria-Trani</option><option>Belluno</option><option>Benevento</option><option>Bergamo</option><option>Biella</option><option>Bologna</option><option>Bolzano</option><option>Brescia</option><option>Brindisi</option><option>Cagliari</option><option>Caltanissetta</option><option>Campobasso</option><option>Caserta</option><option>Catania</option><option>Catanzaro</option><option>Chieti</option><option>Como</option><option>Cosenza</option><option>Cremona</option><option>Crotone</option><option>Cuneo</option><option>Enna</option><option>Fermo</option><option>Ferrara</option><option>Firenze</option><option>Foggia</option><option>Ferlì-Cesena</option><option>Frosinone</option><option>Genova</option><option>Gorizia</option><option>Grosseto</option><option >Imperia</option><option>Isernia</option><option>La Spezia</option><option >L'Aquila</option><option>Latina</option><option>Lecce</option><option>Lecco</option><option>Livorno</option><option>Lodi</option><option>Lucca</option><option>Macerata</option><option>Mantova</option><option>Massa-Carrara</option><option>Matera</option><option>Messina</option><option>Milano</option><option>Modena</option><option>Mona e della Brianza</option><option>Napoli</option><option>Novara</option><option>Nuoro</option><option>Oristano</option><option>Padova/option><option>Palermo</option><option>Parma</option><option>Pavia</option><option>Perugia</option><option>Pesaro e Urbino</option><option>Pescara</option><option>Piacenza</option><option>Pisa</option><option>Pistoia</option><option>Pordenone</option><option>Potenza</option><option>Prato</option><option>Ragusa</option><option>Ravenna</option><option>Reggio Calabria</option><option>Reggio Emilia</option><option>Rieti</option><option>Rimini</option><option>Roma</option><option>Rovigo</option><option>Salerno</option><option>Sassari</option><option>Savona</option><option>Siena</option><option>Siracusa</option><option>Sondrio</option><option>Taranto</option><option selected>Teramo</option><option>Terni</option><option>Torino</option><option>Ogliastra</option><option>Trapani</option><option>Trento</option><option>Treviso</option><option>Trieste</option><option>Udine</option><option>Varese</option><option>Venezia</option><option>Verbano-Cusio-Ossola</option><option>Vercelli</option><option>Verona</option><option>Vibo Valentia</option><option>Vicenza</option><option>Viterbo</option></select>
                 </div></div></div>
+
+                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">PROVINCIA</p></div><div class="col-md-6" style="text-align: center;">
+                    <select id="provincia" onchange="postprovincia()" name="provincia" style="margin-bottom: 20px; border-radius: 4px; border: transparent; background-color: white;"><option selected>Seleziona</option><option>Agrigento</option><option>Alessandria</option><option>Ancona</option><option>Aosta</option><option>Arezzo</option><option>Ascoli Piceno</option><option>Asti</option><option>Avellino</option><option>Bari</option><option>Barletta-Andria-Trani</option><option>Belluno</option><option>Benevento</option><option>Bergamo</option><option>Biella</option><option>Bologna</option><option>Bolzano</option><option>Brescia</option><option>Brindisi</option><option>Cagliari</option><option>Caltanissetta</option><option>Campobasso</option><option>Caserta</option><option>Catania</option><option>Catanzaro</option><option>Chieti</option><option>Como</option><option>Cosenza</option><option>Cremona</option><option>Crotone</option><option>Cuneo</option><option>Enna</option><option>Fermo</option><option>Ferrara</option><option>Firenze</option><option>Foggia</option><option>Frosinone</option><option>Genova</option><option>Gorizia</option><option>Grosseto</option><option >Imperia</option><option>Isernia</option><option>La Spezia</option><option >L'Aquila</option><option>Latina</option><option>Lecce</option><option>Lecco</option><option>Livorno</option><option>Lodi</option><option>Lucca</option><option>Macerata</option><option>Mantova</option><option>Massa-Carrara</option><option>Matera</option><option>Messina</option><option>Milano</option><option>Modena</option><option>Monza e della Brianza</option><option>Napoli</option><option>Novara</option><option>Nuoro</option><option>Oristano</option><option>Padova</option><option>Palermo</option><option>Parma</option><option>Pavia</option><option>Perugia</option><option>Pesaro e Urbino</option><option>Pescara</option><option>Piacenza</option><option>Pisa</option><option>Pistoia</option><option>Pordenone</option><option>Potenza</option><option>Prato</option><option>Ragusa</option><option>Ravenna</option><option>Reggio Calabria</option><option>Reggio Emilia</option><option>Rieti</option><option>Rimini</option><option>Roma</option><option>Rovigo</option><option>Salerno</option><option>Sassari</option><option>Savona</option><option>Siena</option><option>Siracusa</option><option>Sondrio</option><option>Taranto</option><option>Teramo</option><option>Terni</option><option>Torino</option><option>Trapani</option><option>Trento</option><option>Treviso</option><option>Trieste</option><option>Udine</option><option>Varese</option><option>Venezia</option><option>Verbano-Cusio-Ossola</option><option>Vercelli</option><option>Verona</option><option>Vibo Valentia</option><option>Vicenza</option><option>Viterbo</option></select>
+                </div></div>
+
+                <div class="row"><div class="col-md-6"><p style="margin-top: 5px; font-weight: 600; text-align: center;">COMUNE</p></div><div class="col-md-6" style="text-align: center;">
+                    <select id="comuni_list" name="comune"  style="border-radius: 4px; border: transparent; min-width: 180px;  " ><option disabled selected>Seleziona</option>{{comuni_list}}</select>
+                </div></div>
+
                 <div class="row">
-                    <div class="row"><div class="col-md-6" style=" font-weight: 600; font-size: 18px; "><p>Il codice fiscale è: </p></div>
-                        <div class="col-md-6"><p style="color: #1a1a1a; font-weight: 650">{{codice}}</p></div>
+                    <div class="row" style="box-sizing: content-box;"><div class="col-md-6" style=" font-weight: 600; text-align: center; margin-top: 10px; "><p>IL TUO CODICE FISCALE É: </p></div>
+                        <div class="col-md-6" style="text-align: center;"><p style="color: #4cc1bb; font-weight: 650">{{codice}}</p></div>
                     </div>
                     <div class="col-md-12">
-                        <input type="submit" value="CALCOLA" style="border-radius: 10px; border: transparent; background-color: aliceblue ; margin: auto; text-align: center; display: block; width: 140px; margin-bottom: 5px; color: black;    "/>
+                        <input type="submit" value="CALCOLA" style="border-radius: 10px; border: transparent; background-color: aliceblue ; margin: auto; text-align: center; display: block; width: 140px; margin-bottom: 5px; color: black; "/> 
                     </div>
                 </div>
 
             </form>
         </div>
     </div>
-    <div class="row" style="background-color: #c7e8f3">
-        <div class="col-lg-8" style="background-color: #c7e8f3; text-align: center; margin: auto ">
+    <div class="row" style="background-color: #c7e8f3;">
+        <div class="col-10" style="background-color: #c7e8f3; text-align: center; margin: auto; max-width: 1300px; min-height: 327.8px; ">
             <h4 style="margin-top: 20px; ">Codice Fiscale: cos'è e come si calcola</h4>
             <p style=" font-family: Arial, Helvetica, sans-serif; margin-top: 25px; ">
                 Il codice fiscale è un codice utilizzato ai fini fiscali e amministrativi per identificare in modo univoco i cittadini italiani.
@@ -245,7 +246,7 @@
         </div>
     </div>
             <div class="row" style="background-color: #181924; font-size: 12px; color: white; text-align: center; ">
-                <div class="col-lg-12" style="margin-top: 10px;">
+                <div class="col-lg-12" style="margin-top: 30px;">
                     <form action="https://www.paypal.com/donate" method="post" target="_top">
                         <input type="hidden" name="hosted_button_id" value="HMWWZW6DUF4LG" />
                         <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donateCC_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
@@ -259,11 +260,23 @@
                     <p>
                         Il codice viene generato secondo le regole del D.M. Del 12/03/1974.
                     </p>
-
+                    
                 </div>
-
             </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"> </script>
+<script>
+function postprovincia() {
+    let provincia = document.getElementById('provincia').value;
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        document.getElementById("comuni_list").innerHTML =
+        xhttp.response;
+    }
+    xhttp.open("POST", "/c/?provincia=" + provincia, true);
+    xhttp.send();
+    }
+</script>
 
 </body>
 </html>
