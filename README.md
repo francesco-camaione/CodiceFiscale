@@ -1,6 +1,7 @@
 # Calcolatore codice fiscale
 Questa Web App è disponibile su https://calcolatore-codice-fiscale.herokuapp.com/ 
-E' stata costruita seguendo le regole dettate su https://it.wikipedia.org/wiki/Codice_fiscale 
+
+Ed è stata sviluppata seguendo le regole dettate da https://it.wikipedia.org/wiki/Codice_fiscale 
 
 Il Frontend è curato con: 
 - HTML5, CSS
@@ -9,3 +10,4 @@ Il Frontend è curato con:
  Backend:
 - Python 
 - MySQl
+-Fastapi
