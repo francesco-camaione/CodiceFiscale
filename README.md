@@ -11,4 +11,4 @@ Il Frontend è curato con:
 Backend:
 - Python 
 - MySQl
--Fastapi
+- Fastapi
