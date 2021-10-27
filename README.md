@@ -7,7 +7,8 @@ Il Frontend è curato con:
 - HTML5, CSS
 - Bootstrap per rendere la pagina responsive
 - JS per fare una chiamata AJAX che restituisce i comuni in base alla provincia selezionata
- Backend:
+
+Backend:
 - Python 
 - MySQl
 -Fastapi
